@@ -1,3 +1,5 @@
+# SEJA MUITO BEM VINDO AO MEU PROJETO
+
 # Rick and Morty Character Viewer
 This project is a simple React application that allows users to view information about characters from the Rick and Morty series. It fetches data from the Rick and Morty API and displays the character's details, including an image, name, status, species, gender, origin, location, and episodes. The user can navigate through characters using next and previous buttons or search for a character by ID.
 
@@ -68,11 +70,5 @@ Custom CSS
 
 .Enter a character ID in the search box and click "Buscar" to fetch and display information for that character.
 .
-Contributing
-.
-Contributions are welcome! Please feel free to submit a Pull Request.
+# Project with authorship in practically all aspects and utilizing a third-party API.
 
-
-Acknowledgements
-Rick and Morty API
-Bootstrap
