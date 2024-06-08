@@ -29,13 +29,14 @@ function App() {
   }
 
   function handleSearchButtonClick() {
-    const id = parseInt(inputId);{
+    const id = parseInt(inputId);
+    if (!isNaN(id) && id > 0) {
       setCurrentCharacterId(id);
     }
   }
 
   return (
-    <div className="character-container">
+    <div className="app-container">
       <div className="character-image">
         {character && <img src={character.image} alt="Imagem do Personagem" id="character-image" />}
       </div>
@@ -53,27 +54,29 @@ function App() {
           </>
         )}
       </div>
-      <div className="episode-list">
-        <h2>Episódios</h2>
-        <ul>
-          {character && character.episode.map((episode, index) => (
-            <li key={index}>{episode}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="button-container">
-        <button id="previous-button" onClick={handlePreviousButtonClick}>Anterior</button>
-        <button id="next-button" onClick={handleNextButtonClick}>Próximo</button>
-      </div>
-      <div className="search-container">
-        <input 
-          id="character-id-input"
-          type="number"  
-          placeholder="Buscar personagem pelo ID" 
-          value={inputId}
-          onChange={(e) => setInputId(e.target.value)}
-        />
-        <button id="search-button" onClick={handleSearchButtonClick}>Buscar</button>
+      <div className="episodes-and-controls">
+        <div className="episode-list">
+          <h2>Episódios</h2>
+          <ul>
+            {character && character.episode.map((episode, index) => (
+              <li key={index}>{episode}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="button-container">
+          <button id="previous-button" onClick={handlePreviousButtonClick}>Anterior</button>
+          <button id="next-button" onClick={handleNextButtonClick}>Próximo</button>
+        </div>
+        <div className="search-container">
+          <input 
+            id="character-id-input"
+            type="number"  
+            placeholder="Buscar personagem pelo ID" 
+            value={inputId}
+            onChange={(e) => setInputId(e.target.value)}
+          />
+          <button id="search-button" onClick={handleSearchButtonClick}>Buscar</button>
+        </div>
       </div>
     </div>
   );
