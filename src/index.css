@@ -1,93 +1,105 @@
-
 body {
-  background-image: url(rick-and-morty.jpg);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: url('Rick-and-Morty.jpg');
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-height: 100vh;
+  margin: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  color: #ffffff;
 }
 
-.character-container {
+.app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  padding: 10px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .character-image {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 40px;
+  flex: 0 0 250px;
+  margin-right: 20px;
+  border-radius: 10px;
+  overflow: hidden;
   position: relative;
-  transition: transform 0.2s ease;
 }
 
 .character-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
 .character-image:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .character-info {
-  background-color: #f5f5f5;
-  text-align: center;
-  margin-bottom: 50px;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
 }
 
 .character-info h2 {
-  border-radius: 0%;
-  margin: 0;
-  color: #db1c3c;
-  font-size: 24px;
+  color: #ff6f61;
+  margin-bottom: 10px;
 }
 
 .character-info p {
   margin: 5px 0;
-  color: #da1a1a;
+  color: #f1f1f1;
+}
+
+.episodes-and-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .episode-list {
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
 }
 
 .episode-list h2 {
-  color: #3db4f2;
+  color: #ff6f61;
+  margin-bottom: 10px;
 }
 
 .episode-list ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 150px;
-  overflow-y: auto;
-  border: 1px solid #3db4f2;
-  border-radius: 5px;
-  background-color: #333;
 }
 
 .episode-list li {
-  margin-bottom: 10px;
-  padding: 5px;
   background: #444;
+  margin-bottom: 5px;
+  padding: 10px;
   border-radius: 5px;
-  color: #f5f5f5;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.episode-list li:hover {
+  background-color: #555;
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -97,30 +109,35 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #3db4f2;
-  color: #1a1a1d;
+  background-color: #ff6f61;
+  color: #ffffff;
   transition: background-color 0.3s ease;
 }
 
 .button-container button:hover {
-  background-color: #1a8dc7;
+  background-color: #e65a50;
 }
 
 .search-container {
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .search-container input {
   width: 70%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #3db4f2;
+  border: 1px solid #ff6f61;
   border-radius: 5px;
   margin-right: 10px;
-  background-color: #2d2d34;
-  color: #f5f5f5;
+  background-color: #333;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #e65a50;
 }
 
 .search-container button {
@@ -129,11 +146,35 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #3db4f2;
-  color: #1a1a1d;
+  background-color: #ff6f61;
+  color: #ffffff;
   transition: background-color 0.3s ease;
 }
 
 .search-container button:hover {
-  background-color: #1a8dc7;
+  background-color: #e65a50;
+}
+
+/* Animated Border */
+@keyframes borderAnimation {
+  0% {
+    border-color: #ff6f61;
+  }
+  25% {
+    border-color: #6ff1ff;
+  }
+  50% {
+    border-color: #6fff6f;
+  }
+  75% {
+    border-color: #ff6fff;
+  }
+  100% {
+    border-color: #ff6f61;
+  }
+}
+
+.character-image {
+  border: 5px solid transparent;
+  animation: borderAnimation 5s infinite linear;
 }
