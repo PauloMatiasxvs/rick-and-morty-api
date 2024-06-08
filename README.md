@@ -70,5 +70,5 @@ Custom CSS
 
 .Enter a character ID in the search box and click "Buscar" to fetch and display information for that character.
 .
-# Project with authorship in practically all aspects and utilizing a third-party API.
+# PROJETO FEITO COM DEDICAÇÃO,ESPERO QUE GOSTE
 
